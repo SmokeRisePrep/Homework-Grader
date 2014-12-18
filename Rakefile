@@ -5,6 +5,8 @@ task :default => 'test'
 
 task :test do
     puts "Starting the test now"
+    # Dir.glob('./tests/test_*.rb').each{ |file| require file}
+    
     Rake::Task[:lint].execute
     Rake::Task[:math].execute
 end
@@ -18,5 +20,6 @@ end
 task :math do
     puts "Starting the math test"
     # how do we run the math test here?
-    Dir.glob('./tests/test_*.rb').each{ |file| require file}
+    require_relative "tests/test_simple_numbers"
+    
 end
