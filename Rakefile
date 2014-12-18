@@ -1,9 +1,22 @@
-# this Rakefile doesn't really do anything yet
+#!/usr/bin/env rake
+require 'minitest'
 
-task :default do
-    puts "The default task should actually do something"
+task :default => 'test'
+
+task :test do
+    puts "Starting the test now"
+    Rake::Task[:lint].execute
+    Rake::Task[:math].execute
 end
 
-task :math_test do
-    puts "Starting math tests"
+task :lint do
+    puts "Starting the linting test"
+    # Save this for later once there is a lint test
+    # how do we run a test suite here
+end
+
+task :math do
+    puts "Starting the math test"
+    # how do we run the math test here?
+    Dir.glob('./tests/test_*.rb').each{ |file| require file}
 end
