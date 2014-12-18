@@ -9,8 +9,10 @@ rvm:
     - rbx-2
 # - jruby-master
 # uncomment this line if your project needs to run something other than `rake`:
+script: gem install minitest
 # script: bundle exec install
-# script: ruby tests/test_simple_numbers.rb
+script: ruby tests/test_simple_numbers.rb
+ 
 
 # I added this while trying to get minitest to run
 # Thanks :
